@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" data-bs-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +12,28 @@
     <!-- Saját CSS fájl -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Navigáció -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">&lt;/KM&gt;</a>
+            <a class="navbar-brand fw-bold" href="#">&lt;KM&gt;</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link" href="#about">Rólam</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Készségek</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projektek</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Tapasztalat</a></li>
+                    <!-- Sötét/Világos mód váltó gomb -->
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="theme-toggle" aria-label="Téma váltása">
+                            <i id="theme-icon" class="fas fa-moon"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -34,7 +42,8 @@
     <!-- Fejléc (Hero) -->
     <section class="hero mt-4">
         <div class="container">
-            <img src="Profilkep.jpg" alt="Kolonics Márk" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Kolonics+M%C3%A1rk&size=220&background=0d6efd&color=fff'">
+            <img src="Profilkep.jpg" alt="Kolonics Márk" class="profile-img"
+                onerror="this.src='https://ui-avatars.com/api/?name=Kolonics+M%C3%A1rk&size=220&background=0d6efd&color=fff'">
             <h1 class="display-4 fw-bold mb-3">Kolonics Márk</h1>
             <p class="lead mb-4">Szoftverfejlesztő- és tesztelő technikus tanuló</p>
             <div>
@@ -49,15 +58,22 @@
         <div class="row align-items-center mt-4">
             <div class="col-lg-7 mb-4 mb-lg-0">
                 <h2 class="section-title">Bemutatkozás</h2>
-                <p class="fs-5 text-secondary" style="line-height: 1.8;">Szoftverfejlesztő- és tesztelő technikus tanuló vagyok, valós projekt- és csapatmunka tapasztalattal. Leginkább a webfejlesztés, az adatbázisok kezelése és a különböző programok összekapcsolása (API) érdekel. Több mint 10 éves versenysportolói múltamból fakadóan precíz és fegyelmezett vagyok, jól bírom a nagy koncentrációt igénylő feladatokat. Az iskolai projektek és a diákmunkám során is megtanultam, hogyan dolgozzak hatékonyan együtt másokkal egy csapatban.</p>
+                <p class="fs-5 text-body-secondary" style="line-height: 1.8;">Szoftverfejlesztő- és tesztelő technikus
+                    tanuló vagyok, valós projekt- és csapatmunka tapasztalattal. Leginkább a webfejlesztés, az
+                    adatbázisok kezelése és a különböző programok összekapcsolása (API) érdekel. Több mint 10 éves
+                    versenysportolói múltamból fakadóan precíz és fegyelmezett vagyok, jól bírom a nagy koncentrációt
+                    igénylő feladatokat. Az iskolai projektek és a diákmunkám során is megtanultam, hogyan dolgozzak
+                    hatékonyan együtt másokkal egy csapatban.</p>
             </div>
             <div class="col-lg-4 offset-lg-1">
                 <div class="card border-0 shadow-lg rounded-4 p-3 bg-primary text-white">
                     <div class="card-body">
-                        <h4 class="card-title fw-bold border-bottom pb-2 mb-3"><i class="fas fa-graduation-cap me-2"></i>Tanulmányok</h4>
+                        <h4 class="card-title fw-bold border-bottom pb-2 mb-3"><i
+                                class="fas fa-graduation-cap me-2"></i>Tanulmányok</h4>
                         <h5 class="mb-1">Szoftverfejlesztő- és tesztelő technikus</h5>
                         <p class="mb-2 fw-semibold opacity-75">UMSZKI</p>
-                        <p class="mb-0"><i class="far fa-calendar-alt me-2"></i>2023. szept. – Folyamatban (Várható végzés: 2028)</p>
+                        <p class="mb-0"><i class="far fa-calendar-alt me-2"></i>2023. szept. – Folyamatban (Várható
+                            végzés: 2028)</p>
                     </div>
                 </div>
             </div>
@@ -65,26 +81,34 @@
     </section>
 
     <!-- Készségek -->
-    <section class="bg-light py-5" id="skills">
+    <section class="bg-body-tertiary py-5" id="skills">
         <div class="container text-center mt-3">
             <h2 class="section-title mb-5">Technikai Készségek</h2>
             <div class="mb-4">
                 <span class="badge bg-primary skill-badge shadow-sm"><i class="fab fa-html5 me-1"></i>HTML</span>
                 <span class="badge bg-primary skill-badge shadow-sm"><i class="fab fa-css3-alt me-1"></i>CSS</span>
-                <span class="badge bg-warning text-dark skill-badge shadow-sm"><i class="fab fa-js me-1"></i>JavaScript</span>
-                <span class="badge" style="background-color: #7952b3;"><i class="fab fa-bootstrap me-1"></i>Bootstrap</span>
+                <span class="badge bg-warning text-dark skill-badge shadow-sm"><i
+                        class="fab fa-js me-1"></i>JavaScript</span>
+                <span class="badge" style="background-color: #7952b3;"><i
+                        class="fab fa-bootstrap me-1"></i>Bootstrap</span>
             </div>
             <div class="mb-4">
                 <span class="badge bg-success skill-badge shadow-sm"><i class="fab fa-python me-1"></i>Python</span>
                 <span class="badge" style="background-color: #239120;"><i class="fas fa-code me-1"></i>C#</span>
-                <span class="badge bg-info text-dark skill-badge shadow-sm"><i class="fas fa-database me-1"></i>MySQL</span>
-                <span class="badge bg-dark skill-badge shadow-sm"><i class="fab fa-php me-1"></i>PHP</span>
+                <span class="badge bg-info text-dark skill-badge shadow-sm"><i
+                        class="fas fa-database me-1"></i>MySQL</span>
+                <span class="badge bg-dark skill-badge shadow-sm border border-secondary"><i
+                        class="fab fa-php me-1"></i>PHP</span>
             </div>
             <div>
-                <span class="badge bg-dark skill-badge shadow-sm"><i class="fab fa-git-alt me-1"></i> Git / GitHub</span>
-                <span class="badge bg-dark skill-badge shadow-sm"><i class="fas fa-network-wired me-1"></i> API Integrációk</span>
-                <span class="badge bg-secondary skill-badge shadow-sm"><i class="fas fa-video me-1"></i> Videószerkesztés</span>
-                <span class="badge bg-secondary skill-badge shadow-sm"><i class="fas fa-palette me-1"></i> Photoshop</span>
+                <span class="badge bg-dark skill-badge shadow-sm border border-secondary"><i
+                        class="fab fa-git-alt me-1"></i> Git / GitHub</span>
+                <span class="badge bg-dark skill-badge shadow-sm border border-secondary"><i
+                        class="fas fa-network-wired me-1"></i> API Integrációk</span>
+                <span class="badge bg-secondary skill-badge shadow-sm"><i class="fas fa-video me-1"></i>
+                    Videószerkesztés</span>
+                <span class="badge bg-secondary skill-badge shadow-sm"><i class="fas fa-palette me-1"></i>
+                    Photoshop</span>
             </div>
         </div>
     </section>
@@ -97,15 +121,16 @@
         <div class="row g-4 px-lg-4">
             <!-- Spotify API -->
             <div class="col-lg-4 col-md-6">
-                <div class="card shadow project-card rounded-4 p-2">
+                <div class="card shadow-sm bg-body project-card rounded-4 p-2">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <i class="fab fa-spotify text-success fs-1 me-3"></i>
                             <h5 class="card-title fw-bold mb-0">Spotify API Tracker</h5>
                         </div>
                         <h6 class="card-subtitle mb-3 text-primary fw-semibold">HTML, CSS, JS, API, Git</h6>
-                        <p class="card-text text-secondary">Egyedi webalkalmazás (frontend) fejlesztése és élesítése GitHub Pages segítségével.</p>
-                        <ul class="text-secondary small ps-3">
+                        <p class="card-text text-body-secondary">Egyedi webalkalmazás (frontend) fejlesztése és
+                            élesítése GitHub Pages segítségével.</p>
+                        <ul class="text-body-secondary small ps-3">
                             <li>Biztonságos bejelentkezési folyamat (PKCE) beépítése.</li>
                             <li>Gyorsítótárazási (caching) hibák sikeres javítása.</li>
                         </ul>
@@ -114,15 +139,16 @@
             </div>
             <!-- TATAMI MASTER -->
             <div class="col-lg-4 col-md-6">
-                <div class="card shadow project-card rounded-4 p-2" style="border-top: 5px solid #ffc107;">
+                <div class="card shadow-sm bg-body project-card rounded-4 p-2" style="border-top: 5px solid #ffc107;">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <h5 class="card-title fw-bold mb-0">🥋 TATAMI MASTER</h5>
                             <span class="badge bg-warning text-dark rounded-pill">Fejlesztés alatt</span>
                         </div>
                         <h6 class="card-subtitle mb-3 text-primary fw-semibold">HTML, CSS, JS, PHP, MySQL</h6>
-                        <p class="card-text text-secondary">Küzdősport versenyek (kata/kumite) igényeire szabott, saját fejlesztésű eredmény-nyilvántartó és pontozó szoftver.</p>
-                        <ul class="text-secondary small ps-3">
+                        <p class="card-text text-body-secondary">Küzdősport versenyek (kata/kumite) igényeire szabott,
+                            saját fejlesztésű eredmény-nyilvántartó és pontozó szoftver.</p>
+                        <ul class="text-body-secondary small ps-3">
                             <li>Felhasználói felület (frontend) tervezése.</li>
                             <li>Strukturált adatok tárolása és rendszerlogika összekötése.</li>
                         </ul>
@@ -131,15 +157,16 @@
             </div>
             <!-- UMSZKI -->
             <div class="col-lg-4 col-md-6">
-                <div class="card shadow project-card rounded-4 p-2">
+                <div class="card shadow-sm bg-body project-card rounded-4 p-2">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <i class="fas fa-book-open text-info fs-2 me-3"></i>
                             <h5 class="card-title fw-bold mb-0">UMSZKI 100 könyv</h5>
                         </div>
                         <h6 class="card-subtitle mb-3 text-primary fw-semibold">HTML, CSS, JavaScript</h6>
-                        <p class="card-text text-secondary">Interaktív, több fájlból álló digitális archívum webes felületének megtervezése és leprogramozása a saját iskolám számára.</p>
-                        <ul class="text-secondary small ps-3">
+                        <p class="card-text text-body-secondary">Interaktív, több fájlból álló digitális archívum webes
+                            felületének megtervezése és leprogramozása a saját iskolám számára.</p>
+                        <ul class="text-body-secondary small ps-3">
                             <li>Logikus, átlátható tartalom-összekapcsolás.</li>
                             <li>Könnyen kezelhető, felhasználóbarát felület.</li>
                         </ul>
@@ -150,27 +177,29 @@
     </section>
 
     <!-- Tapasztalat & Eredmények -->
-    <section class="bg-light py-5" id="experience">
-        <div class="container mt-3 mb-5"> <!-- Javított alsó térköz, hogy ne lógjon a láblécre -->
+    <section class="container py-5" id="experience">
+        <div class="mt-3 mb-5">
             <div class="row px-lg-4">
                 <!-- Diákmunka -->
                 <div class="col-lg-6 mb-4">
                     <h2 class="section-title mb-4">Szakmai Tapasztalat</h2>
-                    <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                    <div class="card border-0 shadow-sm rounded-4 p-3 bg-body h-100">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
-                                <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center" style="width: 50px; height: 50px;">
+                                <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center"
+                                    style="width: 50px; height: 50px;">
                                     <i class="fas fa-briefcase fs-5"></i>
                                 </div>
                                 <div class="ms-3">
                                     <h5 class="card-title fw-bold mb-0">Adminisztratív kisegítő</h5>
-                                    <p class="text-muted mb-0">Dunakeszi Járműjavító Kft. | 2025 nyara</p>
+                                    <p class="text-body-secondary mb-0">Dunakeszi Járműjavító Kft. | 2025 nyara</p>
                                 </div>
                             </div>
-                            <!-- Javított (ps-3) behúzás a listapöttyöknek -->
-                            <ul class="text-secondary mt-4 ps-3">
-                                <li class="mb-2">Csapatban történő munkavégzés, közös feladatok hatékony elosztása és megoldása.</li>
-                                <li class="mb-2">Adatok átlátható rendszerezése és kezelése Microsoft Excel táblázatokban.</li>
+                            <ul class="text-body-secondary mt-4 ps-3">
+                                <li class="mb-2">Csapatban történő munkavégzés, közös feladatok hatékony elosztása és
+                                    megoldása.</li>
+                                <li class="mb-2">Adatok átlátható rendszerezése és kezelése Microsoft Excel
+                                    táblázatokban.</li>
                                 <li>Címkézési és egyéb adminisztrációs feladatok pontos elvégzése.</li>
                             </ul>
                         </div>
@@ -179,34 +208,33 @@
                 <!-- Sporteredmények -->
                 <div class="col-lg-6 mb-4">
                     <h2 class="section-title mb-4">Kiemelkedő Eredmények</h2>
-                    <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                    <div class="card border-0 shadow-sm rounded-4 p-3 bg-body h-100">
                         <div class="card-body">
-                            <h5 class="fw-bold mb-4 text-dark"><i class="fas fa-medal text-warning me-2 fs-4"></i>Kyokushin Karate Európa-bajnokságok</h5>
-                            
+                            <h5 class="fw-bold mb-4 text-body"><i
+                                    class="fas fa-medal text-warning me-2 fs-4"></i>Kyokushin Karate Európa-bajnokságok
+                            </h5>
+
                             <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
                                 <div>
-                                    <p class="mb-0 fw-semibold text-dark">39. Súlycsoportos EB (Várna)</p>
-                                    <small class="text-muted">2026. május</small>
+                                    <p class="mb-0 fw-semibold text-body">39. Súlycsoportos EB (Várna)</p>
+                                    <small class="text-body-secondary">2026. május</small>
                                 </div>
-                                <!-- Bronz érem színe (bg-bronze) -->
                                 <span class="badge bg-bronze rounded-pill px-3 py-2 fs-6">Junior Kata 3.</span>
                             </div>
-                            
+
                             <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
                                 <div>
-                                    <p class="mb-0 fw-semibold text-dark">38. Súlycsoportos EB (Varsó)</p>
-                                    <small class="text-muted">2025</small>
+                                    <p class="mb-0 fw-semibold text-body">38. Súlycsoportos EB (Varsó)</p>
+                                    <small class="text-body-secondary">2025</small>
                                 </div>
-                                <!-- Ezüst érem színe (bg-silver) -->
                                 <span class="badge bg-silver rounded-pill px-3 py-2 fs-6">Junior Kata 2.</span>
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <p class="mb-0 fw-semibold text-dark">21. Súlycsoport Nélküli EB (Katowice)</p>
-                                    <small class="text-muted">2024</small>
+                                    <p class="mb-0 fw-semibold text-body">21. Súlycsoport Nélküli EB (Katowice)</p>
+                                    <small class="text-body-secondary">2024</small>
                                 </div>
-                                <!-- Bronz érem színe (bg-bronze) -->
                                 <span class="badge bg-bronze rounded-pill px-3 py-2 fs-6">Junior Kata 3.</span>
                             </div>
                         </div>
@@ -227,14 +255,14 @@
                 </div>
                 <div class="col-md-3 mb-3 mb-md-0">
                     <i class="fas fa-envelope fs-3 mb-2 d-block"></i>
-                    <span>ide.ird@az-email-cimed.hu</span>
+                    <span>kolonics.mark@gmail.com</span>
                 </div>
                 <div class="col-md-3">
                     <i class="fas fa-phone fs-3 mb-2 d-block"></i>
-                    <span>+36 30 123 4567</span>
+                    <span>+36 30 871 8844</span>
                 </div>
             </div>
-            
+
             <div class="mt-5">
                 <a href="https://github.com/KoloMarki08" class="fs-1 me-4"><i class="fab fa-github"></i></a>
                 <a href="#" class="fs-1"><i class="fab fa-linkedin"></i></a>
@@ -243,7 +271,11 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS kliens oldali animációkhoz -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Saját JS fájl -->
+    <script src="script.js"></script>
 </body>
+
 </html>
