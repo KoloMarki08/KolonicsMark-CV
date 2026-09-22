@@ -122,3 +122,39 @@ footer a:hover {
 [data-bs-theme="dark"] .profile-img {
     border-color: #222222;
 }
+
+/* =========================================
+   SKILLS ANIMÁCIÓK ÉS INTERAKCIÓ
+   ========================================= */
+
+.interactive-skill {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.interactive-skill:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
+}
+
+.skills-transition {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.hidden-skill {
+    opacity: 0 !important;
+    transform: scale(0.95) translateY(10px) !important;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+}
+
+/* Sötét módban a btn-close fehér legyen, hogy látszódjon a fekete kártyán */
+[data-bs-theme="dark"] .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}

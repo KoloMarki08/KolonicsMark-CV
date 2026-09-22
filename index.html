@@ -18,7 +18,10 @@
     <!-- Navigáció -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">&lt;KM&gt;</a>
+            <a class="navbar-brand" href="#">
+                <img src="Logo.png" alt="KM Logo"
+                    style="height: 40px; width: auto; background-color: rgb(100, 0, 0); padding: 4px; border-radius: 6px;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -82,33 +85,63 @@
 
     <!-- Készségek -->
     <section class="bg-body-tertiary py-5" id="skills">
-        <div class="container text-center mt-3">
-            <h2 class="section-title mb-5">Technikai Készségek</h2>
-            <div class="mb-4">
-                <span class="badge bg-primary skill-badge shadow-sm"><i class="fab fa-html5 me-1"></i>HTML</span>
-                <span class="badge bg-primary skill-badge shadow-sm"><i class="fab fa-css3-alt me-1"></i>CSS</span>
-                <span class="badge bg-warning text-dark skill-badge shadow-sm"><i
-                        class="fab fa-js me-1"></i>JavaScript</span>
-                <span class="badge" style="background-color: #7952b3;"><i
-                        class="fab fa-bootstrap me-1"></i>Bootstrap</span>
+        <div class="container mt-3 position-relative">
+            <div class="text-center">
+                <h2 class="section-title mb-5">Technikai Készségek</h2>
             </div>
-            <div class="mb-4">
-                <span class="badge bg-success skill-badge shadow-sm"><i class="fab fa-python me-1"></i>Python</span>
-                <span class="badge" style="background-color: #239120;"><i class="fas fa-code me-1"></i>C#</span>
-                <span class="badge bg-info text-dark skill-badge shadow-sm"><i
-                        class="fas fa-database me-1"></i>MySQL</span>
-                <span class="badge bg-dark skill-badge shadow-sm border border-secondary"><i
-                        class="fab fa-php me-1"></i>PHP</span>
+
+            <!-- A konténer, ami tartja az eredeti gombokat -->
+            <div id="skills-grid" class="text-center skills-transition">
+                <div class="mb-4">
+                    <span class="badge bg-primary skill-badge shadow-sm interactive-skill" data-skill="html"><i
+                            class="fab fa-html5 me-1"></i>HTML</span>
+                    <span class="badge bg-primary skill-badge shadow-sm interactive-skill" data-skill="css"><i
+                            class="fab fa-css3-alt me-1"></i>CSS</span>
+                    <span class="badge bg-warning text-dark skill-badge shadow-sm interactive-skill" data-skill="js"><i
+                            class="fab fa-js me-1"></i>JavaScript</span>
+                    <span class="badge skill-badge shadow-sm interactive-skill" style="background-color: #7952b3;"
+                        data-skill="bootstrap"><i class="fab fa-bootstrap me-1"></i>Bootstrap</span>
+                </div>
+                <div class="mb-4">
+                    <span class="badge bg-success skill-badge shadow-sm interactive-skill" data-skill="python"><i
+                            class="fab fa-python me-1"></i>Python</span>
+                    <span class="badge skill-badge shadow-sm interactive-skill" style="background-color: #239120;"
+                        data-skill="csharp"><i class="fas fa-code me-1"></i>C#</span>
+                    <span class="badge bg-info text-dark skill-badge shadow-sm interactive-skill" data-skill="mysql"><i
+                            class="fas fa-database me-1"></i>MySQL</span>
+                    <span class="badge bg-dark skill-badge shadow-sm border border-secondary interactive-skill"
+                        data-skill="php"><i class="fab fa-php me-1"></i>PHP</span>
+                </div>
+                <div>
+                    <span class="badge bg-dark skill-badge shadow-sm border border-secondary interactive-skill"
+                        data-skill="git"><i class="fab fa-git-alt me-1"></i>Git / GitHub</span>
+                    <span class="badge bg-dark skill-badge shadow-sm border border-secondary interactive-skill"
+                        data-skill="api"><i class="fas fa-network-wired me-1"></i>API Integrációk</span>
+                    <span class="badge bg-secondary skill-badge shadow-sm interactive-skill" data-skill="video"><i
+                            class="fas fa-video me-1"></i>Videószerkesztés</span>
+                    <span class="badge bg-secondary skill-badge shadow-sm interactive-skill" data-skill="photoshop"><i
+                            class="fas fa-palette me-1"></i>Photoshop</span>
+                </div>
             </div>
-            <div>
-                <span class="badge bg-dark skill-badge shadow-sm border border-secondary"><i
-                        class="fab fa-git-alt me-1"></i> Git / GitHub</span>
-                <span class="badge bg-dark skill-badge shadow-sm border border-secondary"><i
-                        class="fas fa-network-wired me-1"></i> API Integrációk</span>
-                <span class="badge bg-secondary skill-badge shadow-sm"><i class="fas fa-video me-1"></i>
-                    Videószerkesztés</span>
-                <span class="badge bg-secondary skill-badge shadow-sm"><i class="fas fa-palette me-1"></i>
-                    Photoshop</span>
+
+            <!-- A részletes nézet kártyája (alapból rejtve van) -->
+            <div id="skill-detail-card" class="card shadow border-0 bg-body mx-auto skills-transition hidden-skill"
+                style="max-width: 600px;">
+                <!-- Bezáró X gomb (Sötét/Világos móddal kompatibilis) -->
+                <button type="button" id="close-skill-btn" class="btn-close position-absolute top-0 end-0 m-3"
+                    aria-label="Close" style="z-index: 10;"></button>
+
+                <div class="card-body text-center p-4 p-md-5">
+                    <!-- Ikon háttere Dinamikusan fog változni -->
+                    <div id="detail-icon-bg"
+                        class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                        style="width: 80px; height: 80px;">
+                        <i id="detail-icon" class="fa-3x text-white"></i>
+                    </div>
+                    <h3 id="detail-title" class="fw-bold mb-3 text-body">Skill Név</h3>
+                    <p id="detail-desc" class="text-body-secondary fs-6" style="line-height: 1.7;">Ide jön a leírás
+                        dinamikusan a JS-ből.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -125,7 +158,9 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <i class="fab fa-spotify text-success fs-1 me-3"></i>
-                            <a href="https://kolomarki08.github.io/zene-figyelo/" target="_blank"><h5 class="card-title fw-bold mb-0">Spotify API Tracker</h5></a>
+                            <a href="https://kolomarki08.github.io/zene-figyelo/" target="_blank">
+                                <h5 class="card-title fw-bold mb-0">Spotify API Tracker</h5>
+                            </a>
                         </div>
                         <h6 class="card-subtitle mb-3 text-primary fw-semibold">HTML, CSS, JS, API, Git</h6>
                         <p class="card-text text-body-secondary">Egyedi webalkalmazás (frontend) fejlesztése és
@@ -161,7 +196,9 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <i class="fas fa-book-open text-info fs-2 me-3"></i>
-                            <a href="#" target="_blank"><h5 class="card-title fw-bold mb-0">UMSZKI 100 könyv</h5></a>
+                            <a href="#" target="_blank">
+                                <h5 class="card-title fw-bold mb-0">UMSZKI 100 könyv</h5>
+                            </a>
                         </div>
                         <h6 class="card-subtitle mb-3 text-primary fw-semibold">HTML, CSS, JavaScript</h6>
                         <p class="card-text text-body-secondary">Interaktív, több fájlból álló digitális archívum webes
@@ -260,7 +297,8 @@
             </div>
 
             <div class="mt-5">
-                <a href="https://github.com/KoloMarki08" target="_blank" class="fs-1 me-4"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/KoloMarki08" target="_blank" class="fs-1 me-4"><i
+                        class="fab fa-github"></i></a>
                 <a href="#" target="_blank" class="fs-1"><i class="fab fa-linkedin"></i></a>
             </div>
             <p class="mt-5 mb-0 text-secondary small">&copy; 2026 Kolonics Márk. Minden jog fenntartva.</p>
