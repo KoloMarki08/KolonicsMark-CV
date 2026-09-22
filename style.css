@@ -10,6 +10,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
+a{
+    text-decoration: none;
+}
+
 .profile-img { 
     width: 220px; 
     height: 220px; 
